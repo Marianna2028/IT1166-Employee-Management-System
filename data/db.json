@@ -1,0 +1,187 @@
+{
+  "schemaVersion": "1.0",
+  "departments": [
+    {
+      "departmentId": "DEPT-IT",
+      "name": "Information Technology",
+      "active": true
+    },
+    {
+      "departmentId": "DEPT-HR",
+      "name": "Human Resources",
+      "active": true
+    },
+    {
+      "departmentId": "DEPT-OPS",
+      "name": "Operations",
+      "active": true
+    }
+  ],
+  "positions": [
+    {
+      "positionId": "POS-TECH",
+      "title": "Support Technician",
+      "departmentId": "DEPT-IT",
+      "active": true
+    },
+    {
+      "positionId": "POS-LEAD",
+      "title": "Team Lead",
+      "departmentId": "DEPT-IT",
+      "active": true
+    },
+    {
+      "positionId": "POS-HR",
+      "title": "HR Administrator",
+      "departmentId": "DEPT-HR",
+      "active": true
+    },
+    {
+      "positionId": "POS-OPS",
+      "title": "Operations Associate",
+      "departmentId": "DEPT-OPS",
+      "active": true
+    }
+  ],
+  "employees": [
+    {
+      "employeeId": "EMP-0001",
+      "firstName": "Demo",
+      "lastName": "Employee",
+      "workEmail": "demo.employee@example.test",
+      "phone": "555-0101",
+      "departmentId": "DEPT-IT",
+      "positionId": "POS-TECH",
+      "managerId": "EMP-0002",
+      "hireDate": "2026-01-15",
+      "employmentStatus": "Active",
+      "createdAt": "2026-01-15T14:00:00.000Z",
+      "updatedAt": "2026-01-15T14:00:00.000Z",
+      "version": 1
+    },
+    {
+      "employeeId": "EMP-0002",
+      "firstName": "Sample",
+      "lastName": "Manager",
+      "workEmail": "sample.manager@example.test",
+      "phone": "555-0102",
+      "departmentId": "DEPT-IT",
+      "positionId": "POS-LEAD",
+      "managerId": null,
+      "hireDate": "2025-08-01",
+      "employmentStatus": "Active",
+      "createdAt": "2025-08-01T14:00:00.000Z",
+      "updatedAt": "2025-08-01T14:00:00.000Z",
+      "version": 1
+    },
+    {
+      "employeeId": "EMP-0003",
+      "firstName": "Test",
+      "lastName": "Administrator",
+      "workEmail": "test.administrator@example.test",
+      "phone": "555-0103",
+      "departmentId": "DEPT-HR",
+      "positionId": "POS-HR",
+      "managerId": null,
+      "hireDate": "2025-09-01",
+      "employmentStatus": "Active",
+      "createdAt": "2025-09-01T14:00:00.000Z",
+      "updatedAt": "2025-09-01T14:00:00.000Z",
+      "version": 1
+    },
+    {
+      "employeeId": "EMP-0004",
+      "firstName": "Example",
+      "lastName": "Associate",
+      "workEmail": "example.associate@example.test",
+      "phone": "555-0104",
+      "departmentId": "DEPT-OPS",
+      "positionId": "POS-OPS",
+      "managerId": "EMP-0002",
+      "hireDate": "2026-02-02",
+      "employmentStatus": "Active",
+      "createdAt": "2026-02-02T14:00:00.000Z",
+      "updatedAt": "2026-02-02T14:00:00.000Z",
+      "version": 1
+    }
+  ],
+  "users": [
+    {
+      "userId": "USR-0001",
+      "username": "demo.employee",
+      "passwordHash": "$2a$10$lXN5/026ohZcXgwwm1QoVeJRzjVqMcH5fymGbpQAnieLR2/x91ElK",
+      "role": "Employee",
+      "employeeId": "EMP-0001",
+      "active": true,
+      "failedLoginCount": 0,
+      "lockedUntil": null,
+      "lastLoginAt": "2026-10-31T21:59:14.805Z",
+      "createdAt": "2026-10-31T21:38:59.955Z",
+      "updatedAt": "2026-10-31T21:59:14.805Z"
+    },
+    {
+      "userId": "USR-0002",
+      "username": "sample.manager",
+      "passwordHash": "$2a$10$lXN5/026ohZcXgwwm1QoVeJRzjVqMcH5fymGbpQAnieLR2/x91ElK",
+      "role": "Manager",
+      "employeeId": "EMP-0002",
+      "active": true,
+      "failedLoginCount": 0,
+      "lockedUntil": null,
+      "lastLoginAt": null,
+      "createdAt": "2026-10-31T21:38:59.955Z",
+      "updatedAt": "2026-10-31T21:38:59.955Z"
+    },
+    {
+      "userId": "USR-0003",
+      "username": "test.hradmin",
+      "passwordHash": "$2a$10$lXN5/026ohZcXgwwm1QoVeJRzjVqMcH5fymGbpQAnieLR2/x91ElK",
+      "role": "HRAdmin",
+      "employeeId": "EMP-0003",
+      "active": true,
+      "failedLoginCount": 0,
+      "lockedUntil": null,
+      "lastLoginAt": "2026-10-31T22:29:30.514Z",
+      "createdAt": "2026-10-31T21:38:59.955Z",
+      "updatedAt": "2026-10-31T22:29:30.514Z"
+    },
+    {
+      "userId": "USR-0004",
+      "username": "system.admin",
+      "passwordHash": "$2a$10$lXN5/026ohZcXgwwm1QoVeJRzjVqMcH5fymGbpQAnieLR2/x91ElK",
+      "role": "SystemAdmin",
+      "employeeId": null,
+      "active": true,
+      "failedLoginCount": 0,
+      "lockedUntil": null,
+      "lastLoginAt": null,
+      "createdAt": "2026-10-31T21:38:59.955Z",
+      "updatedAt": "2026-10-31T21:38:59.955Z"
+    }
+  ],
+  "leaveRequests": [],
+  "attendance": [],
+  "auditEvents": [
+    {
+      "eventId": "EVT-18dff401-14e7-48fe-ba98-57e6cbef979d",
+      "timestamp": "2026-10-31T21:59:14.805Z",
+      "actorUserId": "USR-0001",
+      "action": "LOGIN",
+      "resourceType": "session",
+      "resourceId": "USR-0001",
+      "result": "Success",
+      "details": {}
+    },
+    {
+      "eventId": "EVT-7789faab-94ea-4001-97f1-71a6685ed4c0",
+      "timestamp": "2026-10-31T22:29:30.515Z",
+      "actorUserId": "USR-0003",
+      "action": "LOGIN",
+      "resourceType": "session",
+      "resourceId": "USR-0003",
+      "result": "Success",
+      "details": {}
+    }
+  ],
+  "updatedAt": "2026-10-31T22:29:30.515Z"
+}
