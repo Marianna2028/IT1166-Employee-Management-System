@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Employee Management System</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+
+<body>
+  <div id="loginView" class="login-page view-hidden">
+    <main class="login-card">
+      <div class="brand">EMS</div>
+      <h1>Employee Management System</h1>
+      <p class="muted">Local capstone prototype</p>
+      <form id="loginForm"><label>Username<input name="username" minlength="3" maxlength="40" autocomplete="username"
+            required></label><label>Password<input name="password" type="password" autocomplete="current-password"
+            required></label><button type="submit">Sign in</button>
+        <p id="loginError" class="error" role="alert"></p>
+      </form>
+      <details>
+        <summary>Demonstration accounts</summary>
+        <p><code>demo.employee</code>, <code>sample.manager</code>, <code>test.hradmin</code>, or
+          <code>system.admin</code></p>
+        <p>Temporary password: <code>Capstone123!</code></p>
+      </details>
+    </main>
+  </div>
+  <div id="dashboardView" class="view-hidden">
+    <header class="top">
+      <div><strong>Employee Management System</strong><span id="identity"></span></div><button id="logout"
+        class="secondary">Sign out</button>
+    </header>
+    <nav aria-label="Main navigation"><button data-tab="employees">Employees</button><button
+        data-tab="leave">Leave</button><button data-tab="attendance">Attendance</button><button
+        data-tab="reports">Reports</button></nav>
+    <main class="container">
+      <div id="message" role="status"></div>
+      <section id="employees" class="panel">
+        <h1>Employee directory</h1>
+        <form id="employeeFilter" class="row"><label>Search<input name="search"
+              maxlength="120"></label><label>Department<select name="departmentId" id="departmentFilter">
+              <option value="">All</option>
+            </select></label><label>Status<select name="status">
+              <option value="">All</option>
+              <option>Active</option>
+              <option>OnLeave</option>
+              <option>Inactive</option>
+            </select></label><button>Apply</button></form>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Employee</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Position</th>
+                <th>Manager</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="employeeRows"></tbody>
+          </table>
+        </div>
+        <form id="employeeForm" class="card hidden">
+          <h2 id="employeeFormTitle">Add employee</h2><input type="hidden" name="employeeId"><input type="hidden"
+            name="version">
+          <div class="grid"><label>First name<input name="firstName" maxlength="50" required></label><label>Last
+              name<input name="lastName" maxlength="50" required></label><label>Work email<input name="workEmail"
+                type="email" maxlength="120" required></label><label>Phone<input name="phone"
+                maxlength="25"></label><label>Department<select name="departmentId" id="employeeDepartment"
+                required></select></label><label>Position<select name="positionId" id="employeePosition"
+                required></select></label><label>Manager<select name="managerId" id="employeeManager">
+                <option value="">None</option>
+              </select></label><label>Hire date<input name="hireDate" type="date" required></label><label>Status<select
+                name="employmentStatus">
+                <option>Active</option>
+                <option>OnLeave</option>
+                <option>Inactive</option>
+              </select></label></div><button>Save</button> <button type="button" class="secondary"
+            id="cancelEmployee">Cancel</button>
+        </form><button id="addEmployee" class="hidden">Add employee</button>
+      </section>
+      <section id="leave" class="panel hidden">
+        <h1>Leave requests</h1>
+        <form id="leaveForm" class="card">
+          <div class="grid"><label>Type<select name="leaveType">
+                <option>Vacation</option>
+                <option>Sick</option>
+                <option>Personal</option>
+                <option>Other</option>
+              </select></label><label>Start date<input type="date" name="startDate" required></label><label>End
+              date<input type="date" name="endDate" required></label><label class="wide">Reason<textarea name="reason"
+                maxlength="500"></textarea></label></div><button>Submit request</button>
+        </form>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Employee</th>
+                <th>Type</th>
+                <th>Dates</th>
+                <th>Status</th>
+                <th>Decision</th>
+              </tr>
+            </thead>
+            <tbody id="leaveRows"></tbody>
+          </table>
+        </div>
+      </section>
+      <section id="attendance" class="panel hidden">
+        <h1>Attendance</h1>
+        <form id="attendanceForm" class="card">
+          <div class="grid"><label id="attendanceEmployeeWrap" class="hidden">Employee<select name="employeeId"
+                id="attendanceEmployee"></select></label><label>Work date<input type="date" name="workDate"
+                required></label><label>Time in<input type="time" name="timeIn"></label><label>Time out<input
+                type="time" name="timeOut"></label><label>Status<select name="status">
+                <option>Present</option>
+                <option>Absent</option>
+                <option>Leave</option>
+                <option>Remote</option>
+              </select></label><label>Notes<input name="notes" maxlength="300"></label></div><button>Save
+            attendance</button>
+        </form>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Employee</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>Hours</th>
+              </tr>
+            </thead>
+            <tbody id="attendanceRows"></tbody>
+          </table>
+        </div>
+      </section>
+      <section id="reports" class="panel hidden">
+        <h1>Reports</h1>
+        <div id="headcount" class="card"></div>
+        <div id="audit" class="card"></div>
+      </section>
+    </main>
+  </div>
+  <script src="/assets/bootstrap.js" defer></script>
+</body>
+
+</html>

@@ -115,9 +115,9 @@
       "active": true,
       "failedLoginCount": 0,
       "lockedUntil": null,
-      "lastLoginAt": "2026-10-31T21:59:14.805Z",
+      "lastLoginAt": "2026-11-01T02:10:33.850Z",
       "createdAt": "2026-10-31T21:38:59.955Z",
-      "updatedAt": "2026-10-31T21:59:14.805Z"
+      "updatedAt": "2026-11-01T02:10:33.850Z"
     },
     {
       "userId": "USR-0002",
@@ -181,7 +181,17 @@
       "resourceId": "USR-0003",
       "result": "Success",
       "details": {}
+    },
+    {
+      "eventId": "EVT-9bf673ca-6e04-410d-b31d-bac9389edbe6",
+      "timestamp": "2026-11-01T02:10:33.850Z",
+      "actorUserId": "USR-0001",
+      "action": "LOGIN",
+      "resourceType": "session",
+      "resourceId": "USR-0001",
+      "result": "Success",
+      "details": {}
     }
   ],
-  "updatedAt": "2026-10-31T22:29:30.515Z"
+  "updatedAt": "2026-11-01T02:10:33.850Z"
 }

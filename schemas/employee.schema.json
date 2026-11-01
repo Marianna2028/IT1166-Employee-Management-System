@@ -1,0 +1,62 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "firstName",
+        "lastName",
+        "workEmail",
+        "departmentId",
+        "positionId",
+        "hireDate",
+        "employmentStatus"
+    ],
+    "properties": {
+        "firstName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50
+        },
+        "lastName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50
+        },
+        "workEmail": {
+            "type": "string",
+            "format": "email",
+            "maxLength": 120
+        },
+        "phone": {
+            "type": "string",
+            "maxLength": 25
+        },
+        "departmentId": {
+            "type": "string"
+        },
+        "positionId": {
+            "type": "string"
+        },
+        "managerId": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "hireDate": {
+            "type": "string",
+            "format": "date"
+        },
+        "employmentStatus": {
+            "enum": [
+                "Active",
+                "OnLeave",
+                "Inactive"
+            ]
+        },
+        "version": {
+            "type": "integer",
+            "minimum": 1
+        }
+    }
+}
